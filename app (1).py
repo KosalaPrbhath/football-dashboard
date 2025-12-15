@@ -49,7 +49,7 @@ col1, col2, col3 = st.columns(3)
 
 col1.metric("Total Players", len(filtered_df))
 col2.metric("Avg Overall", round(filtered_df["Overall"].mean(), 2))
-col3.metric("Avg Value", round(filtered_df["Value"].mean(), 2))
+col3.metric("Avg Value", round(filtered_df["Value(£)"].mean(), 2))
 
 # -----------------------------
 # SHOW TABLE
