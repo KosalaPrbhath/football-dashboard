@@ -32,10 +32,9 @@ if position != "All":
     filtered_df = filtered_df[filtered_df["Position"] == position]
 
 # Metrics
-c1, c2, c3 = st.columns(3)
+c1, c2, = st.columns(2)
 c1.metric("Total Players", len(filtered_df))
 c2.metric("Average Overall", round(filtered_df["Overall"].mean(), 2))
-c3.metric("Average Value", round(filtered_df["Value"].mean(), 2))
 
 # Table
 st.subheader("Player Data")
