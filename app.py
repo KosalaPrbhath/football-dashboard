@@ -24,18 +24,12 @@ position = st.sidebar.selectbox(
     ["All"] + sorted(df["Position"].dropna().unique().tolist())
 )
 
-skill = st.sidebar.selectbox(
-    "Skill Level",
-    ["All"] + sorted(df["Skill_Level"].unique().tolist())
-)
 
 filtered_df = df.copy()
 if club != "All":
     filtered_df = filtered_df[filtered_df["Club"] == club]
 if position != "All":
     filtered_df = filtered_df[filtered_df["Position"] == position]
-if skill != "All":
-    filtered_df = filtered_df[filtered_df["Skill_Level"] == skill]
 
 # Metrics
 c1, c2, c3 = st.columns(3)
