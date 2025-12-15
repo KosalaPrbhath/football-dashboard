@@ -44,9 +44,6 @@ st.dataframe(filtered_df)
 st.subheader("Overall Rating Distribution")
 st.bar_chart(filtered_df["Overall"])
 
-st.subheader("Physical Score Distribution")
-st.bar_chart(filtered_df["Physical_Score"])
-
 # Search
 st.subheader("Search Player")
 name = st.text_input("Enter player name")
