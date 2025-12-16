@@ -43,7 +43,6 @@ st.write("Analyze player performance and compare players easily.")
 
 # PLAYER SEARCH
 # -----------------------------
-st.subheader("🔍 Search Player")
 name = st.text_input("Enter player name")
 
 if name:
