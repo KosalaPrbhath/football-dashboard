@@ -41,6 +41,14 @@ if skill_select != "All":
 st.title("⚽ FootyScope")
 st.write("Analyze player performance and compare players easily.")
 
+# PLAYER SEARCH
+# -----------------------------
+st.subheader("🔍 Search Player")
+name = st.text_input("Enter player name")
+
+if name:
+    result = df[df['Name'].str.contains(name, case=False)]
+
 # -----------------------------
 # METRIC CARDS
 # -----------------------------
@@ -67,11 +75,4 @@ st.subheader("💪 Physical Score Distribution")
 st.bar_chart(filtered_df["Physical_Score"])
 
 # -----------------------------
-# PLAYER SEARCH
-# -----------------------------
-st.subheader("🔍 Search Player")
-name = st.text_input("Enter player name")
-
-if name:
-    result = df[df['Name'].str.contains(name, case=False)]
     st.dataframe(result if len(result) > 0 else pd.DataFrame())
