@@ -6,7 +6,7 @@ import pandas as pd
 # -----------------------------
 @st.cache_data
 def load_data():
-    return pd.read_csv("FIFA_final_dashboard (1).csv")
+    return pd.read_csv("FIFA_final_dashboard (2).csv")
 
 df = load_data()
 
