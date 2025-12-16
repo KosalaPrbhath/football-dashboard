@@ -48,6 +48,7 @@ name = st.text_input("Enter player name")
 
 if name:
     result = df[df['Name'].str.contains(name, case=False)]
+    st.dataframe(result if len(result) > 0 else pd.DataFrame())
 
 # -----------------------------
 # METRIC CARDS
