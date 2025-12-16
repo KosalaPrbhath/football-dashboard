@@ -38,7 +38,7 @@ if skill_select != "All":
 # -----------------------------
 # MAIN TITLE
 # -----------------------------
-st.title("⚽ FIFA Player Stats Dashboard")
+st.title("⚽ FootyScope")
 st.write("Analyze player performance and compare players easily.")
 
 # -----------------------------
