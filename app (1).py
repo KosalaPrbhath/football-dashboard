@@ -75,5 +75,5 @@ st.bar_chart(filtered_df["Overall"])
 st.subheader("💪 Physical Score Distribution")
 st.bar_chart(filtered_df["Physical_Score"])
 
-# -----------------------------
-    st.dataframe(result if len(result) > 0 else pd.DataFrame())
+
+    
