@@ -102,27 +102,27 @@ st.divider()
 st.sidebar.title("⚙️ Filters")
 
 club = st.sidebar.selectbox(
-    "CLUB", ["All"] + sorted(df["CLUB"].dropna().unique())
+    "Club", ["All"] + sorted(df["Club"].dropna().unique())
 )
 
 position = st.sidebar.selectbox(
-    "POSITION", ["All"] + sorted(df["POSITION"].dropna().unique())
+    "Position", ["All"] + sorted(df["Position"].dropna().unique())
 )
 
 skill = st.sidebar.selectbox(
-    "SKILL_LEVEL", ["All"] + sorted(df["SKILL_LEVEL"].unique())
+    "Skill_Level", ["All"] + sorted(df["Skill_Level"].unique())
 )
 
 filtered_df = df.copy()
 
 if club != "All":
-    filtered_df = filtered_df[filtered_df["CLUB"] == club]
+    filtered_df = filtered_df[filtered_df["Club"] == club]
 
 if position != "All":
-    filtered_df = filtered_df[filtered_df["POSITION"] == position]
+    filtered_df = filtered_df[filtered_df["Position"] == position]
 
 if skill != "All":
-    filtered_df = filtered_df[filtered_df["SKILL_LEVEL"] == skill]
+    filtered_df = filtered_df[filtered_df["Skill_Level"] == skill]
 
 # =============================
 # METRICS
