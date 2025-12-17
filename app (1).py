@@ -59,7 +59,7 @@ def set_background(image_path):
     )
 
 set_background(
-    "assets/HD-wallpaper-two-football-players-are-wearing-white-black-dress-football.jpg"
+    "assets/wp8593981.jpg"
 )
 
 # =============================
