@@ -101,15 +101,15 @@ st.divider()
 # =============================
 st.sidebar.title("⚙️ Filters")
 
-CLUB = st.sidebar.selectbox(
+club = st.sidebar.selectbox(
     "CLUB", ["All"] + sorted(df["CLUB"].dropna().unique())
 )
 
-POSITION = st.sidebar.selectbox(
+position = st.sidebar.selectbox(
     "POSITION", ["All"] + sorted(df["POSITION"].dropna().unique())
 )
 
-SKILL = st.sidebar.selectbox(
+skill = st.sidebar.selectbox(
     "SKILL_LEVEL", ["All"] + sorted(df["SKILL_LEVEL"].unique())
 )
 
