@@ -74,5 +74,26 @@ st.bar_chart(filtered_df["Overall"])
 st.subheader("💪 Physical Score Distribution")
 st.bar_chart(filtered_df["Physical_Score"])
 
+import base64
+
+def add_bg_from_local(image_file):
+    with open(image_file, "rb") as image:
+        encoded = base64.b64encode(image.read()).decode()
+    st.markdown(
+        f"""
+        <style>
+        .stApp {{
+            background-image: url("data:image/png;base64,{encoded}");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }}
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
+
+add_bg_from_local("assets/background.jpg")
 
     
