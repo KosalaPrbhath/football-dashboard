@@ -127,7 +127,7 @@ if skill != "All":
 # =============================
 # METRICS
 # =============================
-st.subheader("📊 Performance Overview")
+st.subheader("Performance Overview")
 c1, c2, c3 = st.columns(3)
 
 c1.metric("Total Players", len(filtered_df))
@@ -137,13 +137,13 @@ c3.metric("Avg Value (£)", round(filtered_df["Value(£)"].mean(), 2))
 # =============================
 # DATA TABLE
 # =============================
-st.subheader("📋 Player Dataset")
+st.subheader("Player Dataset")
 st.dataframe(filtered_df, use_container_width=True)
 
 # =============================
 # CHARTS
 # =============================
-st.subheader("📈 Overall Rating Distribution")
+st.subheader("Overall Rating Distribution")
 st.bar_chart(filtered_df["Overall"])
 
 if "Physical_Score" in filtered_df.columns:
