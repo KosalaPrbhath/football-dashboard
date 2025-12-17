@@ -1,5 +1,46 @@
 import streamlit as st
 import pandas as pd
+import base64
+
+# ---------------- BACKGROUND IMAGE ----------------
+def set_background("assets/HD-wallpaper-two-football-players-are-wearing-white-black-dress-football.jpg"):
+    with open(image_path, "rb") as img:
+        encoded = base64.b64encode(img.read()).decode()
+
+    st.markdown(
+        f"""
+        <h1 style='text-align:center; font-weight:800;'>⚽ FootyScope</h1>
+        .stApp {{
+            background-image: url("data:image/jpg;base64,{encoded}");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }}
+
+        /* Dark overlay */
+        .stApp::before {{
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.78);
+            z-index: -1;
+        }}
+
+        /* Sidebar dark */
+        section[data-testid="stSidebar"] {{
+            background-color: #0e0e0e;
+        }}
+
+        h1, h2, h3, h4, h5, h6, p {{
+            color: white;
+        }}
+        <p style='text-align:center; font-size:18px; color:#bbbbbb;'>Advanced FIFA Player Performance Analytics</p>
+        """,
+        unsafe_allow_html=True
+    )
 
 # -----------------------------
 # LOAD DATA
@@ -74,26 +115,5 @@ st.bar_chart(filtered_df["Overall"])
 st.subheader("💪 Physical Score Distribution")
 st.bar_chart(filtered_df["Physical_Score"])
 
-import base64
-
-def add_bg_from_local(image_file):
-    with open(image_file, "rb") as image:
-        encoded = base64.b64encode(image.read()).decode()
-    st.markdown(
-        f"""
-        <style>
-        .stApp {{
-            background-image: url("data:image/png;base64,{encoded}");
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-        }}
-        </style>
-        """,
-        unsafe_allow_html=True
-    )
-
-add_bg_from_local("assets/background.jpg")
 
     
