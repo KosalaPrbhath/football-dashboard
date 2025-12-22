@@ -147,6 +147,6 @@ st.subheader("Overall Rating Distribution")
 st.bar_chart(filtered_df["Overall"])
 
 if "Physical_Score" in filtered_df.columns:
-    st.subheader("💪 Physical Score Distribution")
+    st.subheader("Physical Score Distribution")
     st.bar_chart(filtered_df["Physical_Score"])
 
