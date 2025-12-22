@@ -80,9 +80,7 @@ st.title("⚽ FootyScope")
 tab1, tab2 = st.tabs(["📊 Dashboard", "🆚 Player Comparison"])
 
 with tab1:
-    
-
-# =============================
+    # =============================
 # BACKGROUND IMAGE
 # =============================
 def set_background(image_path):
