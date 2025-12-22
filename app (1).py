@@ -136,11 +136,6 @@ def load_data():
 
 df = load_data()
 
-tab1, tab2 = st.tabs(["📊 Dashboard", "🆚 Player Comparison"])
-
-with tab1:
-    
-
 # =============================
 # HEADER
 # =============================
@@ -152,6 +147,13 @@ st.markdown("""
     </h3>
 </div>
 """, unsafe_allow_html=True)
+
+
+
+tab1, tab2 = st.tabs(["📊 Dashboard", "🆚 Player Comparison"])
+
+with tab1:
+    
 
 
 # =============================
