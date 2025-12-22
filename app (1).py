@@ -269,7 +269,7 @@ c3.metric("Avg Value (£)", round(filtered_df["Value(£)"].mean(), 2))
 # DATA TABLE
 # =============================
 st.subheader("Player Dataset")
-st.dataframe(filtered_df_df.head(500), use_container_width=True)
+st.dataframe(filtered_df.head(500), use_container_width=True)
 
 # =============================
 # CHARTS
