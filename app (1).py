@@ -75,11 +75,10 @@ input {
 # =============================
 # PAGE CONFIG
 # =============================
-st.set_page_config(
-    page_title="⚽ FootyScope",
-    page_icon="⚽",
-    layout="wide"
-)
+st.title("⚽ FootyScope")
+
+tab1, tab2 = st.tabs(["📊 Dashboard", "🆚 Player Comparison"])
+
 
 # =============================
 # BACKGROUND IMAGE
@@ -169,7 +168,7 @@ st.divider()
 # -----------------------------
 # PLAYER COMPARISON
 # -----------------------------
-st.subheader("🆚 Player Comparison")
+st.subheader("Player Comparison")
 
 player_names = sorted(df["Name"].dropna().unique().tolist())
 
@@ -185,7 +184,7 @@ with colB:
 p1 = df[df["Name"] == player_1].iloc[0]
 p2 = df[df["Name"] == player_2].iloc[0]
 
-st.subheader("📊 Key Stats Comparison")
+st.subheader("Key Stats Comparison")
 
 c1, c2, c3 = st.columns(3)
 
@@ -207,7 +206,7 @@ c3.metric(
     round(p1["Value(£)"] - p2["Value(£)"], 2)
 )
 
-st.subheader("📋 Player vs Player Table")
+st.subheader("Player vs Player Table")
 
 compare_df = pd.DataFrame({
     "Metric": ["Club", "Position", "Overall", "Physical Score", "Value (£)"],
