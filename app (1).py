@@ -2,6 +2,82 @@ import streamlit as st
 import pandas as pd
 import base64
 
+st.markdown("""
+<style>
+
+/* ---------- GLOBAL ---------- */
+html, body, [class*="css"] {
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* ---------- FULL BACKGROUND ---------- */
+.stApp {
+    background: linear-gradient(
+        rgba(0,0,0,0.75),
+        rgba(0,0,0,0.85)
+    ),
+    url("assets/HD-wallpaper-two-football-players-are-wearing-white-black-dress-football.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* ---------- TITLES WITH OUTLINE ---------- */
+h1 {
+    color: white;
+    text-align: center;
+    font-size: 3.2rem;
+    -webkit-text-stroke: 2px black;
+    text-shadow: 0px 6px 15px rgba(0,0,0,0.8);
+}
+
+h2, h3 {
+    color: white;
+    -webkit-text-stroke: 1.2px black;
+    text-shadow: 0px 4px 10px rgba(0,0,0,0.7);
+}
+
+/* ---------- GLASS CARD ---------- */
+.glass {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    padding: 20px;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+    margin-bottom: 25px;
+}
+
+/* ---------- METRIC STYLE ---------- */
+[data-testid="metric-container"] {
+    background: rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 18px;
+    box-shadow: 0px 6px 18px rgba(0,0,0,0.6);
+}
+
+/* ---------- SEARCH BAR ---------- */
+input {
+    border-radius: 14px !important;
+    padding: 10px !important;
+}
+
+/* ---------- DATAFRAME ---------- */
+.stDataFrame {
+    background: rgba(0,0,0,0.55);
+    border-radius: 14px;
+}
+
+/* ---------- SIDEBAR ---------- */
+section[data-testid="stSidebar"] {
+    background: linear-gradient(180deg, #0f2027, #203a43, #2c5364);
+    color: white;
+}
+
+</style>
+""", unsafe_allow_html=True)
+
 # =============================
 # PAGE CONFIG
 # =============================
