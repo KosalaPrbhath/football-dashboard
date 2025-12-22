@@ -166,6 +166,70 @@ if name:
 
 st.divider()
 
+# -----------------------------
+# PLAYER COMPARISON
+# -----------------------------
+st.subheader("🆚 Player Comparison")
+
+player_names = sorted(df["Name"].dropna().unique().tolist())
+
+colA, colB = st.columns(2)
+
+with colA:
+    player_1 = st.selectbox("Select Player 1", player_names)
+
+with colB:
+    player_2 = st.selectbox("Select Player 2", player_names, index=1)
+
+# Get player data
+p1 = df[df["Name"] == player_1].iloc[0]
+p2 = df[df["Name"] == player_2].iloc[0]
+
+st.subheader("📊 Key Stats Comparison")
+
+c1, c2, c3 = st.columns(3)
+
+c1.metric(
+    "⭐ Overall",
+    p1["Overall"],
+    int(p1["Overall"] - p2["Overall"])
+)
+
+c2.metric(
+    "💪 Physical",
+    p1["Physical_Score"],
+    int(p1["Physical_Score"] - p2["Physical_Score"])
+)
+
+c3.metric(
+    "💰 Value (£)",
+    p1["Value(£)"],
+    round(p1["Value(£)"] - p2["Value(£)"], 2)
+)
+
+st.subheader("📋 Player vs Player Table")
+
+compare_df = pd.DataFrame({
+    "Metric": ["Club", "Position", "Overall", "Physical Score", "Value (£)"],
+    player_1: [
+        p1["Club"],
+        p1["Position"],
+        p1["Overall"],
+        p1["Physical_Score"],
+        p1["Value(£)"]
+    ],
+    player_2: [
+        p2["Club"],
+        p2["Position"],
+        p2["Overall"],
+        p2["Physical_Score"],
+        p2["Value(£)"]
+    ]
+})
+
+st.dataframe(compare_df, use_container_width=True)
+
+
 # =============================
 # SIDEBAR FILTERS
 # =============================
