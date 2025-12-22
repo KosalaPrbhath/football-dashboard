@@ -127,11 +127,6 @@ set_background(
     "assets/wp8593981.jpg"
 )
 
-
-tab1, tab2 = st.tabs(["📊 Dashboard", "🆚 Player Comparison"])
-
-with tab1:
-    
 # =============================
 # LOAD DATA
 # =============================
@@ -140,6 +135,11 @@ def load_data():
     return pd.read_csv("FIFA_final_dashboard (2).csv")
 
 df = load_data()
+
+tab1, tab2 = st.tabs(["📊 Dashboard", "🆚 Player Comparison"])
+
+with tab1:
+    
 
 # =============================
 # HEADER
