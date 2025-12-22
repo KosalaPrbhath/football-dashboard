@@ -150,12 +150,6 @@ st.markdown("""
 
 
 
-tab1, tab2 = st.tabs(["📊 Dashboard", "🆚 Player Comparison"])
-
-with tab1:
-    
-
-
 # =============================
 # SEARCH BAR (TOP)
 # =============================
@@ -167,6 +161,12 @@ if name:
     st.dataframe(result if not result.empty else pd.DataFrame())
 
 st.divider()
+
+tab1, tab2 = st.tabs(["📊 Dashboard", "🆚 Player Comparison"])
+
+with tab1:
+    
+
 
 # =============================
 # SIDEBAR FILTERS
