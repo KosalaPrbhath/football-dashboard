@@ -72,10 +72,7 @@ input {
 </style>
 """, unsafe_allow_html=True)
 
-# =============================
-# PAGE CONFIG
-# =============================
-st.title("⚽ FootyScope")
+
 # =============================
 # BACKGROUND IMAGE
 # =============================
