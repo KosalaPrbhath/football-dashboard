@@ -144,15 +144,15 @@ df = load_data()
 # =============================
 # HEADER
 # =============================
-st.markdown(
-    """
-    <h1 style='text-align:center; font-size:3.2rem;'>⚽ FootyScope</h1>
-    <p style='text-align:center; color:#cbd5f5;'>
-    Explore • Filter • Compare FIFA Player Performance
-    </p>
-    """,
-    unsafe_allow_html=True
-)
+st.markdown("""
+<div class="glass">
+    <h1>⚽ FootyScope</h1>
+    <h3 style="text-align:center;">
+        Elite Football Analytics Dashboard
+    </h3>
+</div>
+""", unsafe_allow_html=True)
+
 
 # =============================
 # SEARCH BAR (TOP)
