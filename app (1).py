@@ -162,72 +162,7 @@ if name:
 
 st.divider()
 
-# =============================
-# SIDEBAR FILTERS
-# =============================
-st.sidebar.title("⚙️ Filters")
 
-club = st.sidebar.selectbox(
-    "Club", ["All"] + sorted(df["Club"].dropna().unique())
-)
-
-position = st.sidebar.selectbox(
-    "Position", ["All"] + sorted(df["Position"].dropna().unique())
-)
-
-skill = st.sidebar.selectbox(
-    "Skill_Level", ["All"] + sorted(df["Skill_Level"].unique())
-)
-
-filtered_df = df.copy()
-
-if club != "All":
-    filtered_df = filtered_df[filtered_df["Club"] == club]
-
-if position != "All":
-    filtered_df = filtered_df[filtered_df["Position"] == position]
-
-if skill != "All":
-    filtered_df = filtered_df[filtered_df["Skill_Level"] == skill]
-tab1, tab2 = st.tabs(["📊 Dashboard", "🆚 Player Comparison"])
-
-with tab1:
-    
-
-
-
-# =============================
-# METRICS
-# =============================
-st.subheader("Performance Overview")
-c1, c2, c3 = st.columns(3)
-
-c1.metric("Total Players", len(filtered_df))
-c2.metric("Avg Overall", round(filtered_df["Overall"].mean(), 2))
-c3.metric("Avg Value (£)", round(filtered_df["Value(£)"].mean(), 2))
-
-# =============================
-# DATA TABLE
-# =============================
-st.subheader("Player Dataset")
-st.dataframe(filtered_df, use_container_width=True)
-
-# =============================
-# CHARTS
-# =============================
-st.subheader("Overall Rating Distribution")
-st.bar_chart(filtered_df["Overall"])
-
-if "Physical_Score" in filtered_df.columns:
-    st.subheader("Physical Score Distribution")
-    st.bar_chart(filtered_df["Physical_Score"])
-
-
-
-
-
-with tab2:
-    
 # -----------------------------
 # PLAYER COMPARISON
 # -----------------------------
@@ -290,3 +225,63 @@ compare_df = pd.DataFrame({
 })
 
 st.dataframe(compare_df, use_container_width=True)
+# =============================
+# SIDEBAR FILTERS
+# =============================
+st.sidebar.title("⚙️ Filters")
+
+club = st.sidebar.selectbox(
+    "Club", ["All"] + sorted(df["Club"].dropna().unique())
+)
+
+position = st.sidebar.selectbox(
+    "Position", ["All"] + sorted(df["Position"].dropna().unique())
+)
+
+skill = st.sidebar.selectbox(
+    "Skill_Level", ["All"] + sorted(df["Skill_Level"].unique())
+)
+
+filtered_df = df.copy()
+
+if club != "All":
+    filtered_df = filtered_df[filtered_df["Club"] == club]
+
+if position != "All":
+    filtered_df = filtered_df[filtered_df["Position"] == position]
+
+if skill != "All":
+    filtered_df = filtered_df[filtered_df["Skill_Level"] == skill]
+    
+
+# =============================
+# METRICS
+# =============================
+st.subheader("Performance Overview")
+c1, c2, c3 = st.columns(3)
+
+c1.metric("Total Players", len(filtered_df))
+c2.metric("Avg Overall", round(filtered_df["Overall"].mean(), 2))
+c3.metric("Avg Value (£)", round(filtered_df["Value(£)"].mean(), 2))
+
+# =============================
+# DATA TABLE
+# =============================
+st.subheader("Player Dataset")
+st.dataframe(filtered_df, use_container_width=True)
+
+# =============================
+# CHARTS
+# =============================
+st.subheader("Overall Rating Distribution")
+st.bar_chart(filtered_df["Overall"])
+
+if "Physical_Score" in filtered_df.columns:
+    st.subheader("Physical Score Distribution")
+    st.bar_chart(filtered_df["Physical_Score"])
+
+
+
+
+
+
