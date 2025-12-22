@@ -130,9 +130,10 @@ set_background(
 # =============================
 # LOAD DATA
 # =============================
-@st.cache_data
+@st.cache_data(show_spinner=False)
 def load_data():
-    return pd.read_csv("FIFA_final_dashboard (2).csv")
+    df = pd.read_csv("FIFA_final_dashboard (2).csv")
+    return df
 
 df = load_data()
 
@@ -268,7 +269,7 @@ c3.metric("Avg Value (£)", round(filtered_df["Value(£)"].mean(), 2))
 # DATA TABLE
 # =============================
 st.subheader("Player Dataset")
-st.dataframe(filtered_df, use_container_width=True)
+st.dataframe(filtered_df_df.head(500), use_container_width=True)
 
 # =============================
 # CHARTS
