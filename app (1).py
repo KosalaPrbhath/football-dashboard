@@ -69,12 +69,6 @@ input {
     border-radius: 14px;
 }
 
-/* ---------- SIDEBAR ---------- */
-section[data-testid="stSidebar"] {
-    background: linear-gradient(180deg, #0f2027, #203a43, #2c5364);
-    color: white;
-}
-
 </style>
 """, unsafe_allow_html=True)
 
