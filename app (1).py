@@ -162,12 +162,6 @@ if name:
 
 st.divider()
 
-tab1, tab2 = st.tabs(["📊 Dashboard", "🆚 Player Comparison"])
-
-with tab1:
-    
-
-
 # =============================
 # SIDEBAR FILTERS
 # =============================
@@ -195,6 +189,12 @@ if position != "All":
 
 if skill != "All":
     filtered_df = filtered_df[filtered_df["Skill_Level"] == skill]
+tab1, tab2 = st.tabs(["📊 Dashboard", "🆚 Player Comparison"])
+
+with tab1:
+    
+
+
 
 # =============================
 # METRICS
