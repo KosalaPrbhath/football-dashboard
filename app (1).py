@@ -76,11 +76,7 @@ input {
 # PAGE CONFIG
 # =============================
 st.title("⚽ FootyScope")
-
-tab1, tab2 = st.tabs(["📊 Dashboard", "🆚 Player Comparison"])
-
-with tab1:
-    # =============================
+# =============================
 # BACKGROUND IMAGE
 # =============================
 def set_background(image_path):
@@ -131,6 +127,11 @@ set_background(
     "assets/wp8593981.jpg"
 )
 
+
+tab1, tab2 = st.tabs(["📊 Dashboard", "🆚 Player Comparison"])
+
+with tab1:
+    
 # =============================
 # LOAD DATA
 # =============================
